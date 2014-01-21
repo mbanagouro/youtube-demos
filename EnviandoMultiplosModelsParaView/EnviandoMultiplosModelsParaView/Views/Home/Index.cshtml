@@ -1,0 +1,40 @@
+﻿@model EnviandoMultiplosModelsParaView.Models.HomeIndexModel
+@{ 
+    Layout = null; 
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Enviando múltiplos Models para a View</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Produto</legend>
+        <p>
+            Produto Id: <input type="text" value="@Model.Produto.Id" />
+        </p>
+        <p>
+            Nome: <input type="text" value="@Model.Produto.Nome" />
+        </p>
+        <p>
+            Categorias:
+            <select>
+                @foreach (var item in Model.Categorias)
+                {
+                <option value="@item.Id">@item.Nome</option>    
+                }
+            </select>
+        </p>
+        <p>
+            Marcas:
+            <select>
+                @foreach (var item in Model.Marcas)
+                {
+                    <option value="@item.Id">@item.Nome</option>
+                }
+            </select>
+        </p>
+    </fieldset>
+</body>
+</html>
